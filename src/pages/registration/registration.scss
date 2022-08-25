@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+*, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    background-color: #152733;
+    overflow-x: hidden;
+}
+
+
+.form {
+    border: solid white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    width: 40vh;
+    border-radius: 15%;
+    padding: 10px;
+}
+
+.main  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+    .form-content .form-items {
+        width: 10%;
+      }
+  }
+
+  label{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  input{
+    border-radius: 20px;
+    border: 0;
+    text-align: center;
+    padding: 15px;
+    width: 70%;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  button{
+    border-radius: 20px;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  .btn-primary{
+    background-color: #6C757D;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    color: white;
+    font-weight: 300;
+    width: 50%;
+    height: 8%;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+     box-shadow: none;
+}
+
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.main2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: white;
+
+}
+
+.head{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+
+
+
