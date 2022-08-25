@@ -117,4 +117,10 @@ h1{
 
 
 
-
+@media only screen and (max-width: 768px) {
+  .form {
+    height: 80vh;
+    border-radius: 10px;
+    
+  }
+}

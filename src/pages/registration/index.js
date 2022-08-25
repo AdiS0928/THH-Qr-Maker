@@ -42,23 +42,23 @@ const Registration = () =>{
         <div className='main'>
             <form className="form" onSubmit={saveUsers}>
                 <h1> Registration</h1>
-                <input placeholder='Enter Name'>
+                <input placeholder='Enter Name' required>
 
                 </input>
 
 
-                <input placeholder='Enter Email'>
+                <input placeholder='Enter Email' required>
 
                 </input>
 
 
-                <input placeholder='Enter Profession'>
+                <input placeholder='Enter Profession' required>
 
                 </input>
 
 
 
-                <input placeholder='Enter Mobile No.'>
+                <input placeholder='Enter Mobile No.' required>
 
                 </input>
 
