@@ -72,7 +72,9 @@ const Registration = () =>{
     }
 
     return(
+        
         <div className='main'>
+            
             <form className="form" onSubmit={saveUsers}>
                 <h1> Registration</h1>
                 <input placeholder='Enter Name' required>
@@ -91,7 +93,7 @@ const Registration = () =>{
 
 
 
-                <input placeholder='Enter Mobile No.' required>
+                <input placeholder='Enter Mobile No.' type="number" required>
 
                 </input>
 
