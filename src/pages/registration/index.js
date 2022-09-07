@@ -80,7 +80,7 @@ const Registration = () =>{
                 </input>
 
 
-                <input placeholder='Enter Email' type="text"  onChange={(e) => setText(e.target.value)} required>
+                <input placeholder='Enter Email' type="email"  onChange={(e) => setText(e.target.value)} required>
 
                 </input>
 
