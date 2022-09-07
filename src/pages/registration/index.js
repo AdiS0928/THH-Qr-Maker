@@ -2,13 +2,21 @@ import './registration.scss'
 import React from 'react';
 import firebase from '../../firebase/firebase';
 import {useNavigate} from 'react-router-dom'
+import axios from "axios"
+import { useState } from 'react';
+import QRCode from 'qrcode'
 
 const Registration = () =>{
 
     const navigate = useNavigate();
+    const [sent, setSent] = useState(false);
+    const [text,setText] = useState("hello");
+    const [tt,setTt] = useState("hello");
+    const [qr, setQr] = useState('')
+
 
     const Users = firebase.firestore().collection("Users")
-    const saveUsers = (e) =>{
+    const saveUsers = async(e) =>{
         e.preventDefault();
         var count = 0;
         const element = [...e.target.elements];
@@ -33,9 +41,34 @@ const Registration = () =>{
             count++;
         })
 
-        Users.add(data).then((data) => {
-            navigate('/qr',{state: {id:data.id}})
-        });
+        Users.add(data).then(async (data) => {
+            setTt("lolololol");
+            QRCode.toDataURL(data.id, {
+                width: 800,
+                height: 400,
+                margin: 2,
+                color: {
+                    dark: '#335383FF',
+                    light: '#EEEEEEFF'
+                }
+            }, (err, id) => {
+                if (err) return console.error(err)
+    
+                console.log(id)
+                setQr(id)
+                navigate('/qr',{state: {id:data.id, to:text, tt:tt, qr:id}})
+            })
+
+
+            
+           
+    
+            setSent(true)
+            
+            
+        })
+
+   
     }
 
     return(
@@ -47,7 +80,7 @@ const Registration = () =>{
                 </input>
 
 
-                <input placeholder='Enter Email' required>
+                <input placeholder='Enter Email' type="text"  onChange={(e) => setText(e.target.value)} required>
 
                 </input>
 
