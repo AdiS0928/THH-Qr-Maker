@@ -5,6 +5,7 @@ import axios from "axios"
 import QRCode from 'qrcode'
 import { useEffect } from 'react';
 import { useState } from 'react';
+
 const Qr = () =>{
 
     const {state} = useLocation();

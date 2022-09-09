@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import axios from "axios"
 import { useState } from 'react';
 import QRCode from 'qrcode'
+import QrCodeWithLogo from "qrcode-with-logos";
 
 const Registration = () =>{
 
@@ -43,21 +44,33 @@ const Registration = () =>{
 
         Users.add(data).then(async (data) => {
             setTt("lolololol");
-            QRCode.toDataURL(data.id, {
-                width: 800,
-                height: 400,
-                margin: 2,
-                color: {
-                    dark: '#335383FF',
-                    light: '#EEEEEEFF'
-                }
-            }, (err, id) => {
-                if (err) return console.error(err)
+            // QRCode.toDataURL(data.id, {
+            //     width: 800,
+            //     height: 400,
+            //     margin: 2,
+
+            // }, (err, id) => {
+            //     if (err) return console.error(err)
     
-                console.log(id)
-                setQr(id)
-                navigate('/qr',{state: {id:data.id, to:text, tt:tt, qr:id}})
-            })
+            //     console.log(id)
+            //     setQr(id)
+            //     navigate('/qr',{state: {id:data.id, to:text, tt:tt, qr:id}})
+            // })
+
+            let qrcode = new QrCodeWithLogo({
+                canvas: document.getElementById("canvas"),
+                content: data.id,
+                width: 380,
+                //   download: true,
+                logo: {
+                  src: "/thlogo.png"
+                }
+              });
+               
+              qrcode.getCanvas().then(canvas => {
+                const dataURL = canvas.toDataURL()
+                navigate('/qr',{state: {id:data.id, to:text, tt:tt, qr:dataURL}})
+              });
 
 
             
@@ -76,6 +89,7 @@ const Registration = () =>{
         <div className='main'>
             
             <form className="form" onSubmit={saveUsers}>
+                <img src='/thhlogoo.png' height='70' width='100'/>
                 <h1> Registration</h1>
                 <input placeholder='Enter Name' required>
 
@@ -98,7 +112,10 @@ const Registration = () =>{
                 </input>
 
                 <button id="signup" name="signup" type="submit" className="btn btn-primary" >Register</button>
+                <canvas width='0' height='0' id='canvas' ></canvas>
             </form>
+
+            
         </div>
     )
 }
