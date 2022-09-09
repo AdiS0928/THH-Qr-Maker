@@ -37,9 +37,9 @@ html, body {
     justify-content: center;
     align-items: center;
     
-    height: 60vh;
+    height: 70vh;
     width: 40vh;
-    border-radius: 15%;
+    border-radius: 15px;
     padding: 10px;
     resize: none;
 }
@@ -133,13 +133,14 @@ h1{
   .form {
     resize: none;
 
-    min-height:400px !important;
+    min-height:530px !important;
 
-max-height:400px !important;
+max-height:530px !important;
 
 min-width:300px !important;
 
 max-width:300px !important;
+border-radius: 15px;
 
   }
 
