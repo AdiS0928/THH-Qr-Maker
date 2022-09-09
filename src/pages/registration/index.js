@@ -91,23 +91,24 @@ const Registration = () =>{
             <form className="form" onSubmit={saveUsers}>
                 <img src='/thhlogoo.png' height='70' width='100'/>
                 <h1> Registration</h1>
-                <input placeholder='Enter Name' required>
+                <h2> Welcome Aboard!</h2>
+                <input placeholder='Enter Name'  required>
 
                 </input>
 
 
-                <input placeholder='Enter Email' type="email"  onChange={(e) => setText(e.target.value)} required>
+                <input placeholder='Enter Email' type="email" className='item' onChange={(e) => setText(e.target.value)} required>
 
                 </input>
 
 
-                <input placeholder='Enter Profession' required>
+                <input placeholder='Enter Profession' className='item' required>
 
                 </input>
 
 
 
-                <input placeholder='Enter Mobile No.' type="number" required>
+                <input placeholder='Enter Mobile No.' className='item' type="number" required>
 
                 </input>
 
